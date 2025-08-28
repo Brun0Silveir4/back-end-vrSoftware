@@ -2,7 +2,6 @@ const request = require("supertest");
 const app = require("../app");
 const { saveStatus, resetStatus } = require("../data/storage");
 
-// Mock do RabbitMQ
 jest.mock("../config/rabbit", () => ({
   getChannel: () => ({
     assertQueue: jest.fn().mockResolvedValue(),
